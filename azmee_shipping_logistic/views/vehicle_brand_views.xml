@@ -9,6 +9,9 @@
                     <group>
                         <field name="name"/>
                     </group>
+                    <grouup>
+                        <field name="vehicle_ids"></field>
+                    </grouup>
                 </sheet>
             </form>
         </field>

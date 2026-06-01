@@ -7,3 +7,4 @@ class AzmeeVehicleModel(models.Model):
     _description = 'Azmee Vehicle Model'
 
     name = fields.Char()
+    year_manufacture = fields.Char(string="Year", required=False, )

@@ -7,3 +7,4 @@ class AzmeeVehicleBrand(models.Model):
     _description = 'Azmee Vehicle Brand'
 
     name = fields.Char()
+    vehicle_ids = fields.One2many(comodel_name="azmee.vehicle", inverse_name="brand_id", string="Vehicles", required=False, )

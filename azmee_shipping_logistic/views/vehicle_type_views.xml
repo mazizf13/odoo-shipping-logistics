@@ -9,6 +9,9 @@
                     <group>
                         <field name="name"/>
                     </group>
+                    <group>
+                        <field name="brand_ids"/>
+                    </group>
                 </sheet>
             </form>
         </field>

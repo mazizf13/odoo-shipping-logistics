@@ -19,3 +19,8 @@ class AzmeeVehicle(models.Model):
         ('need_easy_repair', 'Need Easy Repair'),
         ('need_hard_repair','Need Hard Repair')
     ], required=False, )
+    brand_id = fields.Many2one(comodel_name="azmee.vehicle.brand", string="Brand", required=False, )
+    model_id = fields.Many2one(comodel_name="azmee.vehicle.model", string="Model", required=False, )
+    type_id = fields.Many2one(comodel_name="azmee.vehicle.type", string="Type", required=False, )
+    year_manufacture = fields.Char(related="model_id.year_manufacture")
+
