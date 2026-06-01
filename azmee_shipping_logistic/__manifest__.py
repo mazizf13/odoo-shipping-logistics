@@ -1,0 +1,21 @@
+{
+    'name': 'Azmee Shipping & Logistic',
+    'version': '18.4',
+    'summary': 'Tutorial Odoo',
+    'description': '',
+    'category': 'Custom',
+    'author': 'Azmee',
+    'website': '',
+    'license': 'LGPL-3',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/vehicle_views.xml',
+        'views/vehicle_brand_views.xml',
+        'views/vehicle_model_views.xml',
+        'views/vehicle_type_views.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+}
