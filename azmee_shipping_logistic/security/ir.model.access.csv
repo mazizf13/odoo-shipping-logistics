@@ -8,3 +8,5 @@ access_azmee_spb_lines,access.azmee.spb.lines,model_azmee_spb_lines,base.group_u
 access_azmee_list_issue,access.azmee.list.issue,model_packing_list_issue,base.group_user,1,1,1,1
 access_azmee_list_issue_line,access.azmee.list.issue.line,model_packing_list_issue_line,base.group_user,1,1,1,1
 access_wizard_confirm_pl_issue,access.wizard.confirm.pl.issue,model_wizard_confirm_pl_issue,base.group_user,1,1,1,1
+access_azmee_shipment,access.azmee.shipment.line,model_azmee_shipment,base.group_user,1,1,1,1
+access_azmee_shipment_line,access.azmee.shipment.line,model_azmee_shipment_line,base.group_user,1,1,1,1

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="pl_issue_form_view" model="ir.ui.view">
-          <field name="name">pl.issue.form.view</field>
-          <field name="model">packing.list.issue</field>
+        <record id="azmee_shipment_form_view" model="ir.ui.view">
+          <field name="name">azmee.shipment.form.view</field>
+          <field name="model">azmee.shipment</field>
           <field name="arch" type="xml">
-              <form string="Packing List Issue">
+              <form string="Shipment">
                   <header>
                       <button name="action_confirm" string="Confirm" class="oe_highlight" invisible="state != 'draft'" type="object"/>
                       <button name="action_done" string="Done" class="oe_highlight" invisible="state != 'confirm'" type="object"/>
-                      <button name="action_cancel" string="Cancel" invisible="state != 'confirm'" type="object"/>
+                      <button name="action_cancel" string="Cancel" class="oe_highlight" invisible="state != 'confirm'" type="object"/>
                       <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
                   </header>
                   <sheet>
@@ -21,20 +21,18 @@
                       </div>
                       <group>
                           <group>
-                              <field name="warehouse_from_id"/>
-                              <field name="warehouse_to_id"/>
+                              <field name="driver_name" readonly="state != 'draft'"/>
+                              <field name="vehicle_id" readonly="state != 'draft'"/>
                           </group>
                           <group>
-                              <field name="spb_ids" widget="many2many_tags"/>
+                              <field name="departure_date" readonly="state != 'draft'"/>
                           </group>
                       </group>
                       <group>
-                          <field name="line_ids" nolabel="1">
+                          <field name="line_ids" readonly="state not in ['draft', 'confirm']" nolabel="1">
                               <list editable="bottom">
-                                  <field name="spb_id"/>
-                                  <field name="product_id"/>
-                                  <field name="qty_spb"/>
-                                  <field name="qty_issue"/>
+                                  <field name="pl_issue_id" readonly="state != 'draft'"/>
+                                  <field name="state"/>
                               </list>
                           </field>
                       </group>
@@ -43,23 +41,27 @@
           </field>
         </record>
 
-        <record id="pl_issue_list_view" model="ir.ui.view">
-            <field name="name">pl.issue.list.view</field>
-            <field name="model">packing.list.issue</field>
+        <record id="azmee_shipment_list_view" model="ir.ui.view">
+            <field name="name">azmee.shipment.list.view</field>
+            <field name="model">azmee.shipment</field>
             <field name="arch" type="xml">
-                <list string="Packing List Issue">
+                <list string="Shipment">
                     <field name="name"/>
+                    <field name="driver_name"/>
+                    <field name="vehicle_id"/>
+                    <field name="departure_date"/>
+                    <field name="state"/>
                 </list>
             </field>
         </record>
 
-        <record id="pl_issue_action_view" model="ir.actions.act_window">
-            <field name="name">Packing List Issue</field>
+        <record id="azmee_shipment_action_view" model="ir.actions.act_window">
+            <field name="name">Shipment</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">packing.list.issue</field>
+            <field name="res_model">azmee.shipment</field>
             <field name="view_mode">list,form</field>
         </record>
 
-        <menuitem id="pl_issue_menu" name="Packing List Issue" parent="dokumen_menu" action="pl_issue_action_view" sequence="20"/>
+        <menuitem id="shipment_menu" name="Shipment" parent="dokumen_menu" action="azmee_shipment_action_view" sequence="30"/>
     </data>
 </odoo>
