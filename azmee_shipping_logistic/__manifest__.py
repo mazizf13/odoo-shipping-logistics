@@ -16,6 +16,8 @@
         'views/vehicle_model_views.xml',
         'views/vehicle_type_views.xml',
         'views/spb_views.xml',
+        'views/pl_issue_views.xml',
+        'wizards/wizard_confirm_pl_issue_views.xml',
     ],
     'demo': [],
     'installable': True,

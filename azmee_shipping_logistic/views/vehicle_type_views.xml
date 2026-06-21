@@ -41,5 +41,5 @@
             </field>
     </record>
 
-    <menuitem id="azmee_vehicle_type_menu" name="Type" parent="azmee_shipping_root_menu" action="azmee_vehicle_type_action_view" sequence="40"/>
+    <menuitem id="azmee_vehicle_type_menu" name="Type" parent="master_data_menu" action="azmee_vehicle_type_action_view" sequence="40"/>
 </odoo>

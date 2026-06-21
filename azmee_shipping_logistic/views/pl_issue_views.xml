@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pl_issue_form_view" model="ir.ui.view">
+          <field name="name">pl.issue.form.view</field>
+          <field name="model">packing.list.issue</field>
+          <field name="arch" type="xml">
+              <form string="Packing List Issue">
+                  <header>
+                      <button name="action_confirm" string="Confirm" class="oe_highlight" invisible="state != 'draft'" type="object"/>
+                       <button name="action_done" string="Done" class="oe_highlight" invisible="state != 'confirm'" type="object"/>
+                       <button name="action_cancel" string="Cancel" invisible="state != 'confirm'" type="object"/>
+                      <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                  </header>
+                  <sheet>
+                      <div class="oe_title">
+                          <label for="name" class="oe_edit_only"/>
+                          <h1>
+                              <field name="name" placeholder="......"/>
+                          </h1>
+                      </div>
+                      <group>
+                          <group>
+                              <field name="warehouse_from_id"/>
+                              <field name="warehouse_to_id"/>
+                          </group>
+                          <group>
+                              <field name="spb_ids" widget="many2many_tags"/>
+                          </group>
+                      </group>
+                      <group>
+                          <field name="line_ids" nolabel="1">
+                              <list editable="bottom">
+                                  <field name="spb_id"/>
+                                  <field name="product_id"/>
+                                  <field name="qty_spb"/>
+                                  <field name="qty_issue"/>
+                              </list>
+                          </field>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+        </record>
+
+        <record id="pl_issue_list_view" model="ir.ui.view">
+            <field name="name">pl.issue.list.view</field>
+            <field name="model">packing.list.issue</field>
+            <field name="arch" type="xml">
+                <list string="Packing List Issue">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="pl_issue_action_view" model="ir.actions.act_window">
+            <field name="name">Packing List Issue</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">packing.list.issue</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="pl_issue_menu" name="Packing List Issue" parent="dokumen_menu" action="pl_issue_action_view" sequence="20"/>
+    </data>
+</odoo>

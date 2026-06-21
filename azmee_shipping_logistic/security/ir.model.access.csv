@@ -5,3 +5,6 @@ access_azmee_vehicle_model,access.azmee.vehicle.model,model_azmee_vehicle_model,
 access_azmee_vehicle_type,access.azmee.vehicle.type,model_azmee_vehicle_type,base.group_user,1,1,1,1
 access_azmee_spb,access.azmee.spb,model_azmee_spb,base.group_user,1,1,1,1
 access_azmee_spb_lines,access.azmee.spb.lines,model_azmee_spb_lines,base.group_user,1,1,1,1
+access_azmee_list_issue,access.azmee.list.issue,model_packing_list_issue,base.group_user,1,1,1,1
+access_azmee_list_issue_line,access.azmee.list.issue.line,model_packing_list_issue_line,base.group_user,1,1,1,1
+access_wizard_confirm_pl_issue,access.wizard.confirm.pl.issue,model_wizard_confirm_pl_issue,base.group_user,1,1,1,1

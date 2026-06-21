@@ -70,6 +70,7 @@
         </record>
 
         <menuitem id="azmee_shipping_root_menu" name="Shipping" sequence="10"/>
-        <menuitem id="azmee_vehicle_menu" name="Vehicle" parent="azmee_shipping_root_menu" action="azmee_vehicle_action_view" sequence="10"/>
+        <menuitem id="master_data_menu" name="Master Data" parent="azmee_shipping_root_menu" sequence="10"/>
+        <menuitem id="azmee_vehicle_menu" name="Vehicle" parent="master_data_menu" action="azmee_vehicle_action_view" sequence="10"/>
     </data>
 </odoo>
