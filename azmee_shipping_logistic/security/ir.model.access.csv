@@ -10,3 +10,5 @@ access_azmee_list_issue_line,access.azmee.list.issue.line,model_packing_list_iss
 access_wizard_confirm_pl_issue,access.wizard.confirm.pl.issue,model_wizard_confirm_pl_issue,base.group_user,1,1,1,1
 access_azmee_shipment,access.azmee.shipment.line,model_azmee_shipment,base.group_user,1,1,1,1
 access_azmee_shipment_line,access.azmee.shipment.line,model_azmee_shipment_line,base.group_user,1,1,1,1
+access_packing_list_receipt,access.packing.list.receipt,model_packing_list_receipt,base.group_user,1,1,1,1
+access_packing_list_receipt_line,access.packing.list.receipt.line,model_packing_list_receipt_line,base.group_user,1,1,1,1

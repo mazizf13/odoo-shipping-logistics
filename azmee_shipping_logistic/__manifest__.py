@@ -18,6 +18,7 @@
         'views/spb_views.xml',
         'views/pl_issue_views.xml',
         'views/shipment_views.xml',
+        'views/pl_receipt_views.xml',
         'wizards/wizard_confirm_pl_issue_views.xml',
     ],
     'demo': [],
