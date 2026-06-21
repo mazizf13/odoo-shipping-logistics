@@ -3,3 +3,5 @@ access_azmee_vehicle,access.azmee.vehicle,model_azmee_vehicle,base.group_user,1,
 access_azmee_vehicle_brand,access.azmee.vehicle.brand,model_azmee_vehicle_brand,base.group_user,1,1,1,1
 access_azmee_vehicle_model,access.azmee.vehicle.model,model_azmee_vehicle_model,base.group_user,1,1,1,1
 access_azmee_vehicle_type,access.azmee.vehicle.type,model_azmee_vehicle_type,base.group_user,1,1,1,1
+access_azmee_spb,access.azmee.spb,model_azmee_spb,base.group_user,1,1,1,1
+access_azmee_spb_lines,access.azmee.spb.lines,model_azmee_spb_lines,base.group_user,1,1,1,1
