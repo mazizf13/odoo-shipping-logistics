@@ -26,6 +26,9 @@
                           </group>
                           <group>
                               <field name="departure_date" readonly="state != 'draft'"/>
+                              <field name="total" widget="monetary"/>
+                              <field name="currency_id" invisible="1"/>
+                              <field name="company_id" invisible="1"/>
                           </group>
                       </group>
                       <group>
@@ -33,6 +36,11 @@
                               <list editable="bottom">
                                   <field name="pl_issue_id" readonly="state != 'draft'"/>
                                   <field name="state"/>
+                                  <field name="berat"/>
+                                  <field name="harga" widget="monetary"/>
+                                  <field name="company_id" column_invisible="1"/>
+                                  <field name="currency_id" column_invisible="1"/>
+                                  <field name="subtotal" widget="monetary"/>
                               </list>
                           </field>
                       </group>

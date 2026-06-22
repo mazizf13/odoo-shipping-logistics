@@ -8,7 +8,7 @@ class SPB(models.Model):
     _description = 'SPB'
 
     name = fields.Char(default='/', readonly=True)
-    transfer_date = fields.Date()
+    transfer_date = fields.Datetime(default=fields.Date.today())
     warehouse_from_id = fields.Many2one(comodel_name="stock.warehouse", string="From", required=True, )
     warehouse_to_id = fields.Many2one(comodel_name="stock.warehouse", string="To", required=True, )
     line_ids = fields.One2many(comodel_name="azmee.spb.lines", inverse_name="spb_id", string="Lines", required=False, )

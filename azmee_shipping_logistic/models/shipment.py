@@ -18,6 +18,19 @@ class Shipment(models.Model):
         ('done', 'Done'),
         ('cancel', 'Cancel'),
     ], default='draft', required=True)
+    company_id = fields.Many2one(comodel_name="res.company", string="Company",
+                                 default=lambda self: self.env.user.company_id.id, )
+    currency_id = fields.Many2one(related="company_id.currency_id", string="Currency")
+    total = fields.Monetary(string="Total", )
+
+    @api.onchange('line_ids')
+    def onchange_line_ids(self):
+        for me in self:
+            total = 0
+            for line in me.line_ids:
+                total += line.subtotal
+            me.total = total
+        return
 
     @api.model_create_multi
     def create(self, vals):
@@ -52,4 +65,14 @@ class ShipmentLine(models.Model):
         ('received', 'Received'),
         ('problem', 'Problem'),
     ], default='draft', required=False, )
+    berat = fields.Float(string="Berat")
+    harga = fields.Monetary(string="Harga")
+    company_id = fields.Many2one(comodel_name="res.company", string="Company", default=lambda self: self.env.user.company_id.id, )
+    currency_id = fields.Many2one(related="company_id.currency_id", string="Currency")
+    subtotal = fields.Monetary(string="Subtotal", compute="_compute_subtotoal")
+
+    def _compute_subtotoal(self):
+        for me in self:
+            me.subtotal = me.berat * me.harga
+        return
 

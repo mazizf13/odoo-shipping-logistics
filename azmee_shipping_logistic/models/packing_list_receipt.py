@@ -11,7 +11,7 @@ class PackingListReceipt(models.Model):
 
     name = fields.Char(default="/", readonly=True)
     receiver_name = fields.Char()
-    receiver_date = fields.Date()
+    receiver_date = fields.Datetime(default=fields.Date.today())
     line_ids = fields.One2many(comodel_name="packing.list.receipt.line", inverse_name="pl_receipt_id", string="Lines", required=False, )
     state = fields.Selection(string="Status", selection=[
         ('draft', 'Draft'),
