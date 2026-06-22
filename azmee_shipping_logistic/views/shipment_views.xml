@@ -21,28 +21,28 @@
                       </div>
                       <group>
                           <group>
-                              <field name="driver_name" readonly="state != 'draft'"/>
-                              <field name="vehicle_id" readonly="state != 'draft'"/>
+                              <field name="driver_name" readonly="state == 'done'"/>
+                              <field name="vehicle_id" readonly="state == 'done'"/>
                           </group>
                           <group>
-                              <field name="departure_date" readonly="state != 'draft'"/>
-                              <field name="total" widget="monetary"/>
-                              <field name="currency_id" invisible="1"/>
-                              <field name="company_id" invisible="1"/>
+                              <field name="departure_date" readonly="state == 'done'"/>
+                              <field name="company_id" readonly="state == 'done'"/>
+                              <field name="currency_id" readonly="state == 'done'"/>
                           </group>
                       </group>
                       <group>
-                          <field name="line_ids" readonly="state not in ['draft', 'confirm']" nolabel="1">
+                          <field name="line_ids" nolabel="1" readonly="state == 'done'">
                               <list editable="bottom">
-                                  <field name="pl_issue_id" readonly="state != 'draft'"/>
+                                  <field name="pl_issue_id"/>
                                   <field name="state"/>
                                   <field name="berat"/>
-                                  <field name="harga" widget="monetary"/>
-                                  <field name="company_id" column_invisible="1"/>
-                                  <field name="currency_id" column_invisible="1"/>
-                                  <field name="subtotal" widget="monetary"/>
+                                  <field name="harga"/>
+                                  <field name="subtotal"/>
                               </list>
                           </field>
+                      </group>
+                      <group class="oe_subtotal_footer oe_right">
+                          <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                       </group>
                   </sheet>
               </form>
@@ -58,7 +58,8 @@
                     <field name="driver_name"/>
                     <field name="vehicle_id"/>
                     <field name="departure_date"/>
-                    <field name="state"/>
+                    <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-warning="state == 'confirm'" decoration-success="state == 'done'" decoration-danger="state == 'cancel'"/>
                 </list>
             </field>
         </record>

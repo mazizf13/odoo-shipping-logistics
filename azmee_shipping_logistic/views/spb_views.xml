@@ -51,6 +51,7 @@
                     <field name="warehouse_from_id"/>
                     <field name="warehouse_to_id"/>
                     <field name="total_qty"/>
+                    <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-warning="state == 'confirm'" decoration-success="state == 'approve'" decoration-danger="state == 'reject'"/>
                 </list>
             </field>
         </record>

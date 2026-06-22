@@ -33,10 +33,11 @@ class Shipment(models.Model):
         return
 
     @api.model_create_multi
-    def create(self, vals):
-        for val in vals:
-            val['name'] = self.env['ir.sequence'].next_by_code('seq.shipment')
-        return super(Shipment, self).create(vals)
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('name', '/') == '/':
+                vals['name'] = self.env['ir.sequence'].next_by_code('seq.shipment') or '/'
+        return super(Shipment, self).create(vals_list)
 
     def action_confirm(self):
         for rec in self:

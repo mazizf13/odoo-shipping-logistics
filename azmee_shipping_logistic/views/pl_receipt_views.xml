@@ -19,16 +19,16 @@
                       </div>
                       <group>
                           <group>
-                              <field name="receiver_name"/>
-                              <field name="receiver_date"/>
+                              <field name="receiver_name" readonly="state == 'done'"/>
+                              <field name="receiver_date" readonly="state == 'done'"/>
                           </group>
                           <group>
-                              <field name="shipment_ids" widget="many2many_tags" readonly="state != 'draft'"/>
+                              <field name="shipment_ids" widget="many2many_tags" readonly="state == 'done'"/>
                           </group>
                       </group>
                       <group>
-                          <field name="line_ids" nolabel="1" readonly="state != 'draft'">
-                              <list editable="bottom">
+                          <field name="line_ids" nolabel="1" readonly="state == 'done'">
+                              <list editable="bottom" create="0">
                                   <field name="pl_issue_line_id" column_invisible="True"/>
                                   <field name="pl_issue_id"/>
                                   <field name="spb_id"/>
@@ -52,7 +52,7 @@
                     <field name="name"/>
                     <field name="receiver_name"/>
                     <field name="receiver_date"/>
-                    <field name="state"/>
+                    <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'done'"/>
                 </list>
             </field>
         </record>

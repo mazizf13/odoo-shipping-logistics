@@ -7,7 +7,7 @@ class PackingListIssue(models.Model):
     _rec_name = 'name'
     _description = 'Packing List Issue'
 
-    name = fields.Char(default='/')
+    name = fields.Char(default='/', readonly=True)
     warehouse_from_id = fields.Many2one(comodel_name="stock.warehouse", string="From", required=True, )
     warehouse_to_id = fields.Many2one(comodel_name="stock.warehouse", string="To", required=True, )
     spb_ids = fields.Many2many(comodel_name="azmee.spb", string="SPB", domain=[('state', '=', 'approve'),])
