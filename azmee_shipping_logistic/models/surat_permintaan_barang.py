@@ -42,8 +42,6 @@ class SPB(models.Model):
         for rec in self:
             rec.state = 'reject'
 
-
-
     @api.depends('line_ids.qty')
     def _compute_total_qty(self):
         for rec in self:
@@ -63,5 +61,11 @@ class SPBLines(models.Model):
     spb_id = fields.Many2one(comodel_name="azmee.spb", string="SPB", required=False, )
     product_id = fields.Many2one(comodel_name="product.product", string="Product", required=True, )
     qty = fields.Float(string="Quantity")
+
+    @api.constrains('qty')
+    def _check_qty_max_limit(self):
+        for rec in self:
+            if rec.qty > 100:
+                raise ValidationError("Qty tidak boleh lebih dari 100")
 
 

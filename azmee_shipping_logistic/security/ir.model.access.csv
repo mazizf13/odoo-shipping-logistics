@@ -1,5 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_azmee_vehicle,access.azmee.vehicle,model_azmee_vehicle,base.group_user,1,1,1,1
+access_azmee_vehicle_user,access_azmee_vehicle_user,model_azmee_vehicle,group_azmee_shipping_user,1,0,1,0
+access_azmee_vehicle_admin,access_azmee_vehicle_admin,model_azmee_vehicle,group_azmee_shipping_manager,1,1,1,1
 access_azmee_vehicle_brand,access.azmee.vehicle.brand,model_azmee_vehicle_brand,base.group_user,1,1,1,1
 access_azmee_vehicle_model,access.azmee.vehicle.model,model_azmee_vehicle_model,base.group_user,1,1,1,1
 access_azmee_vehicle_type,access.azmee.vehicle.type,model_azmee_vehicle_type,base.group_user,1,1,1,1
@@ -12,3 +13,4 @@ access_azmee_shipment,access.azmee.shipment.line,model_azmee_shipment,base.group
 access_azmee_shipment_line,access.azmee.shipment.line,model_azmee_shipment_line,base.group_user,1,1,1,1
 access_packing_list_receipt,access.packing.list.receipt,model_packing_list_receipt,base.group_user,1,1,1,1
 access_packing_list_receipt_line,access.packing.list.receipt.line,model_packing_list_receipt_line,base.group_user,1,1,1,1
+access_wizard_shipping_report,access_wizard_shipping_report,model_wizard_shipping_report,,1,1,1,1

@@ -10,6 +10,7 @@
     'depends': ['base', 'stock', 'product'],
     'data': [
         'data/ir_sequence.xml',
+        'security/shipping_security.xml',
         'security/ir.model.access.csv',
         'views/vehicle_views.xml',
         'views/vehicle_brand_views.xml',
@@ -20,6 +21,7 @@
         'views/shipment_views.xml',
         'views/pl_receipt_views.xml',
         'wizards/wizard_confirm_pl_issue_views.xml',
+        'wizards/wizard_shipping_report_views.xml',
     ],
     'demo': [],
     'installable': True,
